@@ -1,0 +1,34 @@
+<mvc:View controllerName="project1.controller.Main" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:f="sap.f"
+>
+    <f:DynamicPage toggleHeaderOnTitleClick="false">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="자재 목록" />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <f:content>
+            <VBox fitContainer="true">
+                <Table id="productTable" inset="false" items="{/MatMasterSet}" class="sapFDynamicPageAlignContent" width="auto">
+                    <columns>
+                        <Column width="12em">
+                            <Text text="Products" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Navigation" press=".onListItemPress">
+                            <cells>
+                                <ObjectIdentifier title="{Zmatnr}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
